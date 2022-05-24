@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  db:
+    build: ./modules/database/
+    container_name: dbmaria
+    env_file: ./modules/app/.env
+    restart: on-failure
+    environment:
+      - MYSQL_ROOT_PASSWORD=maria
+      - MYSQL_PASSWORD=maria
+      - MYSQL_USER=maria
+      - MYSQL_DATABASE=maria
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    networks:
+      - crud_typeorm
+
+networks:
+  crud_typeorm:
+    driver: bridge
+    
