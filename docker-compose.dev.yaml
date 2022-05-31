@@ -12,9 +12,9 @@ services:
       - MYSQL_USER=maria
       - MYSQL_DATABASE=maria
     ports:
-      - 3306:3306
+      - 3308:3306
     volumes:
-      - ./mariadb:/var/lib/mysql
+      - ./modules/mariadb:/var/lib/mysql
     networks:
       - crud_typeorm
 
