@@ -14,8 +14,8 @@ export class UsersService {
     return this.usersRepository.findOne();
   };
 
-  async findOne() {
-    return this.usersRepository.findOne();
+  async findOne(id: string): Promise<Users> {
+    return this.usersRepository.findOne(id);
   };
 
   async save(user: any): Promise<void> {
